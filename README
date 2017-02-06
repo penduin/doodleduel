@@ -1,0 +1,32 @@
+doodleduel
+==========
+a two-player toy for cooperative/competitive doodling.
+
+each of you start a drawing, swap canvases, and complete each others' doodle!
+...or really just do whatever you want with it.  :^)
+
+
+dependencies
+------------
+  node.js
+you may also need to:
+  npm install --save socket.io
+  npm install --save express
+
+
+to run
+------
+$ node server.js
+
+then you and a friend can duel in doodles at http://yourserver:1138
+
+
+future enhancements
+-------------------
+i have no idea if i'll get around to these.  feel like adding stuff like this
+yourself?  i will happily accept pull patches, pull requests, or just more
+ideas to pile here.  :^)
+- picking your own color
+- gather up events on the server in case someone joins late
+- observer mode
+- more-than-2-player mode?

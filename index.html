@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Doodle Duel</title>
+	<link rel="icon" sizes="256x256" href="icon256.png">
+	<link rel="apple-touch-icon" href="icon256.png">
+	<meta name="theme-color" content="silver">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, user-scalable=no"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="duel.js"></script>
+	<style>
+	  html, body {
+	  background: silver;
+	  overflow: hidden;
+	  font-family: sans-serif;
+	  }
+	  canvas {
+	  position: absolute;
+	  box-shadow: black 0.25em 0.25em 0.5em;
+	  width: 30vw;
+	  height: 30vh;
+	  max-width: 30vh;
+	  max-height: 30vw;
+	  top: 5%;
+	  left: 65%;
+	  transition: top cubic-bezier(0.42,-0.3,1,1) 0.5s, left cubic-bezier(0.42,-0.3,1,1) 0.5s,
+	  width 0.5s, height 0.5s, max-width 0.5s, max-height 0.5s, z-index 0.5s;
+	  z-index: 1;
+	  }
+	  .fg {
+	  width: 80vw;
+	  height: 80vh;
+	  max-width: 80vh;
+	  max-height: 80vw;
+	  top: 15%;
+	  left: 5%;
+	  z-index: 10;
+	  }
+	  #clear {
+	  width: 10vw;
+	  height: 10vh;
+	  max-width: 10vh;
+	  max-height: 10vw;
+	  position: absolute;
+	  top: 5%;
+	  left: 5%;
+	  z-index: 12;
+	  }
+	  #swap {
+	  width: 10vw;
+	  height: 10vh;
+	  max-width: 10vh;
+	  max-height: 10vw;
+	  position: absolute;
+	  top: 50%;
+	  right: 5%;
+	  z-index: 12;
+	  }
+	  #swap.wait {
+	  opacity: 0.5;
+	  }
+	  #hurry {
+	  position: absolute;
+	  top: 45%;
+	  right: 5%;
+	  font-size: 10vmin;
+	  z-index: 11;
+	  }
+	  #hurry:not(hidden) {
+	  animation: throb 1s infinite;
+	  }
+	  @keyframes throb {
+	  100% {
+	  transform: scale(1);
+	  }
+	  50% {
+	  transform: scale(2);
+	  }
+	  100% {
+	  transform: scale(1);
+	  }
+	  }
+	  .hidden {
+	  display: none;
+	  }
+	</style>
+  </head>
+  <body>
+	<canvas width=1024 height=1024 id="canv1" class="fg"></canvas>
+	<canvas width=1024 height=1024 id="canv2"></canvas>
+	<img id="clear" src="clear.svg">
+	<img id="swap" src="swap.svg">
+	<div id="hurry" class="hidden"></div>
+  </body>
+</html>
