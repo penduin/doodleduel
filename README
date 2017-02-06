@@ -6,6 +6,18 @@ each of you start a drawing, swap canvases, and complete each others' doodle!
 ...or really just do whatever you want with it.  :^)
 
 
+demo
+----
+you can get the idea of how doodle duel works here:
+https://penduin.github.io/doodleduel/
+
+it's not multiplayer, but you can see how it works on different devices etc.
+
+perhaps sometime i will add support for multiple rooms and cached state and
+enough other trimmings to make it worth sharing my own instance for all to
+connect to.  in the meantime, run your own damn server.  :^)
+
+
 dependencies
 ------------
   node.js
